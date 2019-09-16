@@ -1,0 +1,14 @@
+test : test.o stack.o getnum.o
+
+sources : test.c getnum.c  stack.c
+$(sources) : %.d : %.c
+	@set -e; rm -f $@; \ 
+	$(CC) -M $(CPPFLAGS) $< > $@.; \ 
+	sed 's/\($*\)\.o[ :]*/\1.o $@ : /g' < $@.> $@; \ 
+	rm -f $@.
+
+include $(sources:.c=.d)
+
+ifneq ( $(MAKECMDGOALS),clean)
+	@echo hello world 
+endif
