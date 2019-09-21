@@ -1,0 +1,4 @@
+#! /bin/bash
+
+BOOK=$HOME/programe7
+echo $BOOK

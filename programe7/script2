@@ -1,0 +1,12 @@
+#! /bin/bash
+
+BOOK=$HOME/programe7/testpb
+echo find what name in testpb
+read NAME
+if grep $NAME $BOOK > $HOME/programe7/pb.tmp
+then
+	echo entries for $NAME
+	cat $HOME/programe7/pb.tmp
+else
+	echo no entries for $NAME
+fi
