@@ -1,0 +1,57 @@
+set number
+set hlsearch
+set autoindent
+set incsearch
+"set tabstop=2
+"set expandtab
+"set softtabstop=4
+set cursorline
+set ignorecase
+
+set cindent
+" Tab键的宽度
+set tabstop=4
+" 统一缩进为4
+set softtabstop=4
+set shiftwidth=4
+" 不要用空格代替制表符
+set noexpandtab
+" 在行和段开始处使用制表符
+set smarttab
+
+" map
+let mapleader=","
+inoremap jj <Esc>`^
+
+inoremap <leader>w <Esc>:w<cr>
+nnoremap <leader>w :w<cr>
+
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+" plug
+
+" Specify a directory for plugins
+" " - For Neovim: ~/.local/share/nvim/plugged
+" " - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine'
+Plug 'w0ng/vim-hybrid'
+
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+
+"Plug 'Valloric/YouCompleteMe'
+
+" Initialize plugin system
+call plug#end()
+
+nnoremap <leader>v :NERDTreeFind<cr>
+nnoremap <leader>g :NERDTreeToggle<cr>
+
+let g:ctrlp_map = '<c-p>'
